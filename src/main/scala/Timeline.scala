@@ -14,7 +14,6 @@ case class User(name: String, age: String)
 
 object Timeline {
   val usersClient = Http.client.withAdmissionControl.maxPendingRequests(1000).newService("104.131.176.96:3000")
-  //val usersClient = Http.client.withAdmissionControl.maxPendingRequests(1000).newService("localhost:3000")
   val redisClient = Redis.client.withAdmissionControl.maxPendingRequests(1000).newRichClient("localhost:6379")
 
   def main(args: Array[String]): Unit = {
